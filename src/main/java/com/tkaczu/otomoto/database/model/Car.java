@@ -1,7 +1,6 @@
 package com.tkaczu.otomoto.database.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "cars")
@@ -19,7 +18,7 @@ public class Car {
     private String model;
 
     @Column(name = "production_date", nullable = false)
-    private Date year;
+    private String year;
 
     @Column(name = "mileage", nullable = false)
     private String mileage;
@@ -54,11 +53,11 @@ public class Car {
         this.model = model;
     }
 
-    public Date getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Date year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

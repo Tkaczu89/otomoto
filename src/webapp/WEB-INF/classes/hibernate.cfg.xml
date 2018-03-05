@@ -15,7 +15,7 @@
         <!-- Assume test is the database name -->
 
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/cars?createDatabaseIfNotExist=true
+            jdbc:mysql://localhost/otomoto?createDatabaseIfNotExist=true
         </property>
 
         <property name="hibernate.connection.username">
@@ -30,7 +30,9 @@
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
 
-        <mapping class="com.database.model.Car"/>
+        <mapping class="com.tkaczu.otomoto.database.model.Advertisement"/>
+        <mapping class="com.tkaczu.otomoto.database.model.Car"/>
+        <mapping class="com.tkaczu.otomoto.database.model.User"/>
 
     </session-factory>
 </hibernate-configuration>

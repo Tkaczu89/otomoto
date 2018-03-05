@@ -1,5 +1,7 @@
 package com.tkaczu.otomoto.database.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +21,9 @@ public class User {
     @Column(name = "user_last_name")
     private String userLastName;
 
-    @OneToMany(mappedBy = "users")
-    private List<Advertisment> advertisments = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    @Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    private List<Advertisement> advertisements = new ArrayList<>();
 
     public User() {
     }
@@ -49,11 +52,11 @@ public class User {
         this.userLastName = userLastName;
     }
 
-    public List<Advertisment> getAdvertisments() {
-        return advertisments;
+    public List<Advertisement> getAdvertisements() {
+        return advertisements;
     }
 
-    public void setAdvertisments(List<Advertisment> advertisments) {
-        this.advertisments = advertisments;
+    public void setAdvertisements(List<Advertisement> advertisements) {
+        this.advertisements = advertisements;
     }
 }
