@@ -29,7 +29,6 @@
         <property name="show_sql">true</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
-
         <mapping class="com.tkaczu.otomoto.database.model.Advertisement"/>
         <mapping class="com.tkaczu.otomoto.database.model.Car"/>
         <mapping class="com.tkaczu.otomoto.database.model.User"/>

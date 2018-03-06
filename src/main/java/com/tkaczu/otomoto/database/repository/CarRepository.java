@@ -16,8 +16,6 @@ public class CarRepository {
         try (Session session = factory.openSession()) {
             Query<Car> q = session.createQuery("FROM Car");
             return q.getResultList();
-
-
         }
     }
 }

@@ -3,60 +3,57 @@
 <html>
 <head>
     <title>Komis samochodwy</title>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <div class="container">
-    <h1 align="center">Dodaj ogloszenie:</h1>
-    <p>${info}</p>
+    <h1 align="center">Add an advertisement</h1>
+    <div class="alert alert-success">
+        <strong>Success!</strong>${info}
+    </div>
     <form action="/addadvertisement" method="post">
         <div class="form-group">
-            <label for="formGroupExampleInput">Opis ogloszenia </label>
-            <input name="description" type="text" class="form-control" id="formGroupExampleInput"
-                   placeholder="Tutaj wpisz opis ogloszenia">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">Marka samochodu: </label>
-            <input name="mark" type="text" class="form-control" id="formGroupExampleInput"
+
+            <label for="descriptionId">Advertisement description</label>
+            <textarea name="description" class="form-control" rows="5" id="descriptionId" placeholder="Tutaj wpisz opis ogloszenia"></textarea>
+
+            <label for="priceId">Car price: </label>
+            <input name="price" type="text" class="form-control" id="priceId"
+                   placeholder="Tutaj wpisz cene samochodu">
+
+            <label for="markId">Car mark: </label>
+            <input name="mark" type="text" class="form-control" id="markId"
                    placeholder="Tutaj wpisz marke samochodu">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Model samochodu:</label>
-            <input name="model" type="text" class="form-control" id="formGroupExampleInput2"
+
+            <label for="modelId">Car model: </label>
+            <input name="model" type="text" class="form-control" id="modelId"
                    placeholder="Tutaj wpisz model samochodu">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Rok produkcji samochodu:</label>
-            <input name="year" type="text" class="form-control" id="formGroupExampleInput2"
+
+            <label for="yearId">Production year: </label>
+            <input name="year" type="text" class="form-control" id="yearId"
                    placeholder="Tutaj wpisz rok produkcji samochodu">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Przebieg samochodu</label>
-            <input name="mileage" type="text" class="form-control" id="formGroupExampleInput2"
+
+            <label for="mileageId">Car mileage:</label>
+            <input name="mileage" type="text" class="form-control" id="mileageId"
                    placeholder="Tutaj wpisz przebieg samochodu">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Nr vin samochodu:</label>
-            <input name="vin" type="text" class="form-control" id="formGroupExampleInput2"
+
+            <label for="vinId">Vin number: </label>
+            <input name="vin" type="text" class="form-control" id="vinId"
                    placeholder="Tutaj wpisz nr vin samochodu">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">Twoje imie: </label>
-            <input name="firstName" type="text" class="form-control" id="formGroupExampleInput"
+
+
+            <label for="userFirsNameId">Your first name: </label>
+            <input name="firstName" type="text" class="form-control" id="userFirsNameId"
                    placeholder="Tutaj wpisz swoje imie">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">Twoje nazwisko: </label>
-            <input name="lastName" type="text" class="form-control" id="formGroupExampleInput"
+
+            <label for="userLastNameId">Your last name: </label>
+            <input name="lastName" type="text" class="form-control" id="userLastNameId"
                    placeholder="Tutaj wpisz swoje naziwsko">
+
+            <button type="submit" class="btn btn-block">Add</button>
         </div>
-        <br><br>
-        <button type="submit" class="btn btn-primary">Dodaj</button>
-        <a href="/" name="back" class="btn btn-primary">Wroc</a>
     </form>
 </div>
 </body>
