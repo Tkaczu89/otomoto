@@ -21,7 +21,7 @@ public class Car {
     private String year;
 
     @Column(name = "mileage", nullable = false)
-    private String mileage;
+    private Integer mileage;
 
     @Column(name = "vin_number", nullable = false)
     private String vin;
@@ -61,11 +61,11 @@ public class Car {
         this.year = year;
     }
 
-    public String getMileage() {
+    public Integer getMileage() {
         return mileage;
     }
 
-    public void setMileage(String mileage) {
+    public void setMileage(Integer mileage) {
         this.mileage = mileage;
     }
 
@@ -77,4 +77,15 @@ public class Car {
         this.vin = vin;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carId=" + carId +
+                ", mark='" + mark + '\'' +
+                ", model='" + model + '\'' +
+                ", year='" + year + '\'' +
+                ", mileage=" + mileage +
+                ", vin='" + vin + '\'' +
+                '}';
+    }
 }

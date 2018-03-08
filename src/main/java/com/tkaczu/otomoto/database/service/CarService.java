@@ -3,7 +3,7 @@ package com.tkaczu.otomoto.database.service;
 import com.tkaczu.otomoto.database.model.Car;
 
 public class CarService {
-    public Car createNewCar(String mark, String model, String year, String mileage, String vin) {
+    public Car createNewCar(String mark, String model, String year, Integer mileage, String vin) {
         Car car = new Car();
         car.setMark(mark);
         car.setModel(model);

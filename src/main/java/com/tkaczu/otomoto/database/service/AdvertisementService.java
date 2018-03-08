@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 public class AdvertisementService {
 
-    public Advertisement createNewAdvertisement(String description, String price) {
+    public Advertisement createNewAdvertisement(String description, Integer price) {
         Advertisement advertisement = new Advertisement();
         advertisement.setDescription(description);
         advertisement.setPrice(price);

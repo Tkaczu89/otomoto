@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.tkaczu.otomoto.database.repository.CarRepository.factory;
+import static com.tkaczu.otomoto.database.repository.AdvertisementsRepository.factory;
 
 
 @WebServlet(name = "AddAdvertisementServlet", value = "/addadvertisement", loadOnStartup = 1)
@@ -38,7 +38,7 @@ public class AddAdvertisementServlet extends HttpServlet {
                 req.getParameter("mark"),
                 req.getParameter("model"),
                 req.getParameter("year"),
-                req.getParameter("mileage"),
+                Integer.parseInt(req.getParameter("mileage")),
                 req.getParameter("vin"));
 
         User user = userService.createNewUser(
@@ -47,7 +47,7 @@ public class AddAdvertisementServlet extends HttpServlet {
 
         Advertisement advertisement = advertisementService.createNewAdvertisement(
                 req.getParameter("description"),
-                req.getParameter("price"));
+                Integer.parseInt(req.getParameter("price")));
 
         advertisementService.insertNewAdvertisement(factory, advertisement, car, user);
 

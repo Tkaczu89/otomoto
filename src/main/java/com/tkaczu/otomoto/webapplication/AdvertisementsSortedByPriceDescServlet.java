@@ -11,21 +11,13 @@ import java.io.IOException;
 
 import static com.tkaczu.otomoto.database.repository.AdvertisementsRepository.factory;
 
-@WebServlet(name = "AdvertisementServlet", value = "/advertisements", loadOnStartup = 1)
-public class AdvertisementsServlet extends HttpServlet {
+@WebServlet(name = "AdvertisementsSortedByPriceDescServlet", value = "/sortedByPriceDesc")
+public class AdvertisementsSortedByPriceDescServlet extends HttpServlet {
     AdvertisementsRepository advertisementsRepository = new AdvertisementsRepository();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("advertisements", advertisementsRepository.getAll(factory));
+        req.setAttribute("advertisements", advertisementsRepository.getAllSorted(factory, "price", "desc"));
         req.getRequestDispatcher("advertisements.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("advertisements", advertisementsRepository.getAllSorted(factory, "a.price", "desc"));
-        req.getRequestDispatcher("advertisements.jsp").forward(req, resp);
-
     }
 }
-

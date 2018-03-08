@@ -17,7 +17,7 @@ public class Advertisement {
     private String description;
 
     @Column(name = "price")
-    private String price;
+    private Integer price;
 
     @OneToOne
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
@@ -48,11 +48,11 @@ public class Advertisement {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -70,5 +70,16 @@ public class Advertisement {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Advertisement{" +
+                "advertId=" + advertId +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", car=" + car +
+                ", user=" + user +
+                '}';
     }
 }
