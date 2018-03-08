@@ -22,7 +22,7 @@ public class User {
     private String userLastName;
 
     @OneToMany(mappedBy = "user")
-    @Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private List<Advertisement> advertisements = new ArrayList<>();
 
     public User() {

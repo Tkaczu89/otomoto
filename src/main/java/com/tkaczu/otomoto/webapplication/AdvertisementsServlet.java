@@ -17,15 +17,9 @@ public class AdvertisementsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("advertisements", advertisementsRepository.getAll(factory));
-        req.getRequestDispatcher("advertisements.jsp").forward(req, resp);
-    }
+        req.setAttribute("advertisements", advertisementsRepository.getAll());
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("advertisements", advertisementsRepository.getAllSorted(factory, "a.price", "desc"));
-        req.getRequestDispatcher("advertisements.jsp").forward(req, resp);
-
+        req.getRequestDispatcher("advertisementsTable.jsp").forward(req, resp);
     }
 }
 

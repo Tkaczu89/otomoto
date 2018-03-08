@@ -14,9 +14,7 @@
 <jsp:include page="header.jsp"/>
 <div class="container">
     <h1 align="center">Add an advertisement</h1>
-    <div class="alert alert-success">
-        <strong>Success!</strong>${info}
-    </div>
+    ${info}
     <form method="post">
         <div class="form-group">
 

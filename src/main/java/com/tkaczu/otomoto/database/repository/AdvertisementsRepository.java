@@ -13,14 +13,14 @@ public class AdvertisementsRepository {
     public static SessionFactory factory = new Configuration().configure().buildSessionFactory();
     Query<Advertisement> q;
 
-    public List<Advertisement> getAll(SessionFactory factory) {
+    public List<Advertisement> getAll() {
         try (Session session = factory.openSession()) {
             q = session.createQuery("FROM Advertisement");
             return q.getResultList();
         }
     }
 
-    public List<Advertisement> getAllSorted(SessionFactory factory, String orderElement, String sort) {
+    public List<Advertisement> getAllSorted(String orderElement, String sort) {
         try (Session session = factory.openSession()) {
             switch (sort) {
                 case "desc":
@@ -33,6 +33,14 @@ public class AdvertisementsRepository {
                     q = session.createQuery("FROM Advertisement");
                     return q.getResultList();
             }
+        }
+    }
+
+    public Advertisement getAdvertisementById(Integer advertId){
+        try (Session session = factory.openSession()){
+            q = session.createQuery("FROM Advertisement a WHERE a.advertId =:advertId");
+            q.setParameter("advertId",advertId);
+            return q.getSingleResult();
         }
     }
 }

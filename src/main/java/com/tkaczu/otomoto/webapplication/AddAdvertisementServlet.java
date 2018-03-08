@@ -26,9 +26,8 @@ public class AddAdvertisementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("carAdd.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("advertismentAdd.jsp");
         dispatcher.forward(req, resp);
-
     }
 
     @Override
@@ -51,7 +50,7 @@ public class AddAdvertisementServlet extends HttpServlet {
 
         advertisementService.insertNewAdvertisement(factory, advertisement, car, user);
 
-        req.setAttribute("info", "The advertisement has been added!");
-        req.getRequestDispatcher("carAdd.jsp").forward(req, resp);
+        req.setAttribute("info", "<div class=\"alert alert-success\"><strong>Success!</strong>The advertisement has been added!</div>");
+        req.getRequestDispatcher("advertismentAdd.jsp").forward(req, resp);
     }
 }

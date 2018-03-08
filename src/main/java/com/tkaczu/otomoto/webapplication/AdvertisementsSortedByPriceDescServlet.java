@@ -17,7 +17,7 @@ public class AdvertisementsSortedByPriceDescServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("advertisements", advertisementsRepository.getAllSorted(factory, "price", "desc"));
-        req.getRequestDispatcher("advertisements.jsp").forward(req, resp);
+        req.setAttribute("advertisements", advertisementsRepository.getAllSorted( "price", "desc"));
+        req.getRequestDispatcher("advertisementsTable.jsp").forward(req, resp);
     }
 }

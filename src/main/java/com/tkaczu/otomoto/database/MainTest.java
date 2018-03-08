@@ -30,12 +30,12 @@ public class MainTest {
         advertisementService.insertNewAdvertisement(factory, advertisement2, car2, user2);*/
 
 
-        List<Advertisement> advertisementsAll = advertisementsRepository.getAll(factory);
+        List<Advertisement> advertisementsAll = advertisementsRepository.getAll();
 
-        List<Advertisement> advertisementList1 = advertisementsRepository.getAllSorted(factory, "a.price", "asc");
-        List<Advertisement> advertisementList2 = advertisementsRepository.getAllSorted(factory, "a.price", "desc");
-        List<Advertisement> advertisementList3 = advertisementsRepository.getAllSorted(factory, "a.car.mileage", "asc");
-        List<Advertisement> advertisementList4 = advertisementsRepository.getAllSorted(factory, "a.car.mileage", "desc");
+        List<Advertisement> advertisementList1 = advertisementsRepository.getAllSorted( "a.price", "asc");
+        List<Advertisement> advertisementList2 = advertisementsRepository.getAllSorted( "a.price", "desc");
+        List<Advertisement> advertisementList3 = advertisementsRepository.getAllSorted( "a.car.mileage", "asc");
+        List<Advertisement> advertisementList4 = advertisementsRepository.getAllSorted( "a.car.mileage", "desc");
 
 
         System.out.println();

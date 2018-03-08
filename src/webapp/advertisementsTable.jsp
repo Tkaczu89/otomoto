@@ -19,7 +19,6 @@
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort by
                 <span class="caret"></span></button>
-
             <ul class="dropdown-menu">
                 <li class="dropdown-header">Sort by price</li>
                 <li><input type="hidden" name="sort" value="lowprice"/>
@@ -37,8 +36,6 @@
                     <a href="${pageContext.request.contextPath}/sortedByMileageDesc">Descending</a></li>
             </ul>
         </div>
-
-
         <table class="table table-striped table-dark">
             <thead>
             <tr>
@@ -58,7 +55,8 @@
                     <td>${advertisement.car.model}</td>
                     <td>${advertisement.car.mileage}</td>
                     <td>${advertisement.car.year}</td>
-                    <td><a href="#"><span class="glyphicon glyphicon-circle-arrow-right"></span> Advert</a></td>
+                    <td><form action="/advertisement" method="get"  >
+                        <button name="advertId"  value="${advertisement.advertId}" type="submit" class="glyphicon glyphicon-circle-arrow-right"> Advert</button></form></td>
                 </tr>
             </c:forEach>
             </tbody>

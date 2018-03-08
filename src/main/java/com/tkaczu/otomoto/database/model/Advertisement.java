@@ -2,6 +2,7 @@ package com.tkaczu.otomoto.database.model;
 
 import org.hibernate.annotations.Cascade;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -25,7 +26,7 @@ public class Advertisement {
     private Car car;
 
     @ManyToOne
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "user_id")
     private User user;
 
